@@ -14,5 +14,12 @@ export class UserService {
         
         return this.userRepo.createUser(userDto);
     }
+
+    async getUsers () {
+        const query = this.userRepo.createQueryBuilder('users')
+                                    .getMany();
+
+        return query;
+    }
     
 }
